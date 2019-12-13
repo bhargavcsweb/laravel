@@ -10,8 +10,22 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('', 'PagesController@index');
-Route::get('/about', 'PagesController@about');
-Route::get('/contact', 'PagesController@contact');
 
-Route::resource('post', 'PostsController');
+
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
+Route::get('/hello' , 'PageController@index');
+Route::get('/service' , 'servicesControllerphp@index');
+Route::post('/service' , 'servicesControllerphp@store');
+Route::get('/add-service' , 'servicesControllerphp@add_service');
+
+
+
+Route::get('/customers' , 'CustomerController@index');
+Route::get('/customers/create' , 'CustomerController@create');
+
+Route::post('/customers/create' , 'CustomerController@store');
